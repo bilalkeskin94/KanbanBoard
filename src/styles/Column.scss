@@ -1,0 +1,99 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px;
+}
+
+.kanban-board {
+  display: flex;
+  gap: 20px;
+}
+
+.column {
+  flex: 1 1 0px;
+  max-width: 300px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  &:first-child {
+    background-color: #f4f5f9;
+  }
+
+  &:last-child {
+    background-color: #f9f7f8;
+  }
+
+  .title {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #1c1e21;
+  }
+
+  .task-list {
+    padding: 8px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #323232;
+}
+
+.task-list {
+  min-height: 200px;
+  padding: 10px;
+  background-color: #f4f5f9;
+  border-radius: 4px;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .content {
+    flex-grow: 1;
+    font-size: 14px;
+    color: #323232;
+  }
+
+  .info {
+    display: flex;
+    align-items: center;
+
+    .id {
+      margin-right: 10px;
+      color: #888888;
+      font-size: 12px;
+    }
+
+    .priority {
+      color: #888888;
+      font-size: 12px;
+    }
+  }
+}
