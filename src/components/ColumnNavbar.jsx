@@ -12,17 +12,21 @@ function ColumnNavbar() {
 	return (
 		<div className="column-navbar-wrapper">
 			<img src={LeftArrow} alt="Left Arrow" />
-			<hr className="seperator" />
+			<hr className="column-seperator" />
 			<img src={SprLogo} alt="Spr Logo" />
 			<h5>SPR-03</h5>
-			<hr className="seperator" />
+			<hr className="column-seperator" />
 			<img src={Team10} alt="Team 10" />
 			<h5>TEAM-10</h5>
-			<hr className="seperator" />
+			<hr className="column-seperator" />
 			<h4>New Sprint Name</h4>
 			<img src={NewSprintLogo} alt="New Sprint Logo" />
 			<img src={UsersLogo} alt="Users Logo" />
-			<img src={CompleteButton} alt="Complete Button" />
+			<img
+				style={{ marginLeft: '24px' }}
+				src={CompleteButton}
+				alt="Complete Button"
+			/>
 			<div class="right-side">
 				<img src={BookLogo} alt="Book Logo" />
 				<img src={BlueFilterLogo} alt="Blue Filter Logo" />
