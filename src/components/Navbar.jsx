@@ -1,10 +1,10 @@
 import React from 'react';
+import AddTaskForm from './AddTaskForm';
 import Search from './Search';
 import '../styles/Navbar.scss';
 import Logo from '../images/logo--header.svg';
 import Controls from '../images/controls.svg';
 import Filter from '../images/filter.svg';
-import Plus from '../images/plus1.svg';
 
 const Navbar = ({ onSearch }) => {
 	return (
@@ -21,7 +21,7 @@ const Navbar = ({ onSearch }) => {
 				<img src={Filter} alt="Filter" />
 			</div>
 			<div className="add-task">
-				<img src={Plus} alt="plus icon" />
+				<AddTaskForm />
 			</div>
 		</nav>
 	);

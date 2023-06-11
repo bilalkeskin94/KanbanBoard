@@ -58,7 +58,7 @@ const Sidebar = () => {
 					<span className="user-image-text">Neil Larkins</span>
 				</li>
 				<hr class="seperator" />
-				<li>
+				<li className="sidebar-company">
 					<img src={CompanyLogo} alt="Company Logo" />
 					<span className="user-image-text">Epodbay Inc</span>
 				</li>

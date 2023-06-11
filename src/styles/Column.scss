@@ -17,13 +17,16 @@
 
 .column {
 	flex: 1 1 0px;
-	max-width: 300px;
 	transition: box-shadow 0.3s ease;
 	padding: 24px;
 	background: #ffffff;
 	border: 1px solid rgba(0, 23, 71, 0.07);
 	border-radius: 8px;
-	height: 100vh;
+	min-height: 350px;
+
+	[data-rbd-droppable-context-id] {
+		min-height: 90vh;
+	}
 
 	.title {
 		font-family: 'Inter';
@@ -33,23 +36,6 @@
 		line-height: 19px;
 		letter-spacing: 0.018em;
 		color: #001747;
-	}
-
-	.task-list {
-		border: 1px solid rgba(0, 23, 71, 0.05);
-		border-radius: 4px;
-		padding: 12px 12px 44px;
-		margin-top: 16px;
-	}
-
-	.id {
-		font-family: 'Inter';
-		font-style: normal;
-		font-weight: 300;
-		font-size: 13px;
-		line-height: 24px;
-		font-feature-settings: 'liga' off;
-		color: #8c97ac;
 	}
 }
 
@@ -93,4 +79,9 @@
 	display: inline-block;
 	width: 25px;
 	position: relative;
+}
+
+.board-seperator {
+	border: 1px solid #f6f9fb;
+	margin-top: 16px;
 }

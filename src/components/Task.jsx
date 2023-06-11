@@ -6,6 +6,10 @@ import '../styles/Task.scss';
 import Chart1 from '../images/chart1.svg';
 import Chart2 from '../images/chart2.svg';
 import Chart3 from '../images/chart3.svg';
+import TSK from '../images/tsk.svg';
+import EPC from '../images/epc.svg';
+import Number from '../images/number.svg';
+import User from '../images/ellipse-1154@2x.png';
 
 const Task = ({ task, index }) => {
 	const { id, content, priority } = task;
@@ -39,6 +43,9 @@ const Task = ({ task, index }) => {
 					{...provided.dragHandleProps}
 					className={`task ${snapshot.isDragging ? 'is-dragging' : ''}`}
 				>
+					<button className="edit-button" onClick={handleEdit}>
+						Edit
+					</button>
 					<div className="content">
 						{isEditing ? (
 							<input
@@ -53,7 +60,19 @@ const Task = ({ task, index }) => {
 						)}
 					</div>
 					<div className="info">
-						<span className="id">ID: {id}</span>
+						<span className="id">
+							{id.includes('TSK') ? (
+								<span className="task-type">
+									<img src={TSK} alt="task logo" />
+									<span class="info-text">{id}</span>
+								</span>
+							) : (
+								<span className="task-type">
+									<img src={EPC} alt="epic logo" />
+									<span class="info-text">{id}</span>
+								</span>
+							)}
+						</span>
 						<span className="priority">
 							{priority === '1' ? (
 								<img src={Chart1} alt="chart1" />
@@ -62,11 +81,16 @@ const Task = ({ task, index }) => {
 							) : (
 								<img src={Chart3} alt="chart3" />
 							)}
+							<img src={Number} alt="number" />
+							<img
+								style={{
+									height: '24px',
+								}}
+								src={User}
+								alt="User"
+							/>
 						</span>
 					</div>
-					<button className="edit-button" onClick={handleEdit}>
-						Edit
-					</button>
 				</div>
 			)}
 		</Draggable>

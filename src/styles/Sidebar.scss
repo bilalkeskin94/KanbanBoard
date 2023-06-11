@@ -2,10 +2,9 @@
 
 .sidebar {
 	width: 185px;
-	height: 100vh;
 	background-color: #fff;
 	color: #fff;
-	padding: 10px 5px;
+	padding: 0 5px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -81,6 +80,11 @@
 				left: 8px;
 				white-space: nowrap;
 			}
+		}
+
+		.sidebar-company {
+			position: relative;
+			top: -7px;
 		}
 	}
 }

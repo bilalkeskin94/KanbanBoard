@@ -1,0 +1,74 @@
+.add-task-form {
+	background-color: #fff;
+	border-radius: 4px;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+	padding: 36px;
+	min-height: 110px;
+	position: absolute;
+	left: 40%;
+	top: 30%;
+	min-width: 400px;
+	display: flex;
+	flex-direction: column;
+	display: flex;
+	justify-content: center;
+
+	.action-buttons {
+		display: flex;
+		margin-left: auto;
+		margin-top: 30px;
+	}
+
+	input,
+	select {
+		margin-top: 24px;
+	}
+
+	select {
+		border: 1px solid #e1e5e9;
+		border-radius: 4px;
+		padding: 8px;
+		width: 100%;
+		font-size: 14px;
+		color: #2d3748;
+		transition: all 0.3s ease;
+		outline: none;
+
+		&:focus {
+			border: 1px solid #2d70fd;
+		}
+	}
+
+	input {
+		border: 1px solid #e1e5e9;
+		border-radius: 4px;
+		padding: 8px;
+		width: 100%;
+		font-size: 14px;
+		color: #2d3748;
+		transition: all 0.3s ease;
+		outline: none;
+
+		&:focus {
+			border: 1px solid #2d70fd;
+		}
+	}
+
+	button {
+		border: none;
+		border-radius: 4px;
+		padding: 8px 16px;
+		font-size: 14px;
+		font-weight: 500;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		outline: none;
+		color: #fff;
+		background-color: #2d70fd;
+	}
+
+	.action-buttons {
+		display: flex;
+		gap: 20px;
+	}
+}
