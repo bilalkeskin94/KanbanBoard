@@ -7,23 +7,24 @@ import Sidebar from './components/Sidebar';
 import './App.scss';
 
 const App = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+	const [searchTerm, setSearchTerm] = useState('');
 
-  const handleSearch = (value) => {
-    setSearchTerm(value);
-  };
+	const handleSearch = (value) => {
+		setSearchTerm(value);
+	};
 
-  return (
-    <Provider store={store}>
-      <div className="app">
-        <Navbar onSearch={handleSearch} />
-        <div className="main">
-          <Sidebar />
-          <KanbanBoard searchTerm={searchTerm} />
-        </div>
-      </div>
-    </Provider>
-  );
+	return (
+		<Provider store={store}>
+			<div className="app">
+				<Navbar onSearch={handleSearch} />
+				<div className="main">
+					<Sidebar />
+
+					<KanbanBoard searchTerm={searchTerm} />
+				</div>
+			</div>
+		</Provider>
+	);
 };
 
 export default App;
