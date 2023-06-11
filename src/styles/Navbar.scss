@@ -1,52 +1,51 @@
+@import './utilities.scss';
+
 .navbar {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    background-color: #fff;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .left-section {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo {
-    height: 30px;
-  }
-  
-  .right-section {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-  }
-  
-  button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 8px;
-    border: none;
-    border-radius: 4px;
-    background-color: transparent;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  
-    &:hover {
-      background-color: #f4f4f4;
-    }
-  }
-  
-  .search-button {
-    margin-right: 10px;
-  }
-  
-  .add-task-button {
-    background-color: #3182ce;
-    color: #fff;
-  }
-  
-  .add-task-button svg {
-    margin-right: 4px;
-  }
-  
+	display: flex;
+	align-items: center;
+	padding: 10px 20px;
+	background-color: #fff;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid #f6f9fb;
+
+	.logo-seperator {
+		border: 1px solid #f1f4f4;
+		transform: rotate(-90deg);
+		display: inline-block;
+		width: 34px;
+		position: relative;
+		top: -13px;
+	}
+
+	.btn-bg {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: rgba(140, 151, 172, 0.07);
+		margin-left: 10px;
+		border: none;
+		border-radius: 3px;
+		width: 32px;
+	}
+
+	.button-background {
+		padding: 6px;
+	}
+
+	.filter-background {
+		padding: 9px;
+	}
+
+	.add-task {
+		margin-left: auto;
+		border: 1px solid #2d70fd;
+		border-radius: 4px;
+		color: #2d70fd;
+		padding: 5px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 32px;
+		height: 32px;
+	}
+}

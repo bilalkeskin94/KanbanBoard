@@ -1,44 +1,44 @@
 @import './variables.scss';
 
 .kanban-board {
-  background-color: $very-dark-grey;
-  width: 100%;
-  overflow-y: auto;
-  .new-board-column {
-    min-width: 280px;
-    margin-top: 35px;
-    background-color: $dark-grey;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: $light-grey;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-  }
+	background-color: $very-light-grey;
+	width: 100%;
+	overflow-y: auto;
+	.new-board-column {
+		min-width: 280px;
+		margin-top: 35px;
+		background-color: $dark-grey;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: $light-grey;
+		cursor: pointer;
+		border-radius: 10px;
+		transition: all 0.3s ease;
+	}
 
-  .new-board-column:hover {
-    color: $dark-blue;
-  }
+	.new-board-column:hover {
+		color: $dark-blue;
+	}
 
-  .boards-div {
-    padding: 15px;
-    display: flex;
-    height: 100%;
-  }
+	.boards-div {
+		padding: 15px;
+		display: flex;
+		height: 100%;
+	}
 
-  .empty-board-div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    padding: 0 30px;
-    .empty-content {
-      text-align: center;
-      h3 {
-        color: $light-grey;
-        margin-bottom: 25px;
-      }
-    }
-  }
+	.empty-board-div {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		padding: 0 30px;
+		.empty-content {
+			text-align: center;
+			h3 {
+				color: $light-grey;
+				margin-bottom: 25px;
+			}
+		}
+	}
 }
