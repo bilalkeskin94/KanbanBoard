@@ -2,61 +2,55 @@
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
-	padding: 50px;
+	padding: 2em;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 .column-wrapper {
 	display: flex;
+	flex-direction: column;
+	width: 100%;
 }
 
 .kanban-board {
 	display: flex;
-	gap: 20px;
-	margin-top: 24px;
-	overflow: hidden;
-	height: 840px;
+	flex-direction: column;
+	gap: 2em;
+	margin-top: 2em;
+	overflow: auto;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 .column {
-	flex: 1 1;
 	transition: box-shadow 0.3s ease;
-	padding: 24px;
+	padding: 1em;
 	background: #ffffff;
 	border: 1px solid rgba(0, 23, 71, 0.07);
 	border-radius: 8px;
-	min-height: 150px;
-	max-width: 300px;
+	min-height: 800px;
+	width: 100%;
 	overflow-y: auto;
+}
 
-	[data-rbd-droppable-context-id] {
-		min-height: 70vh;
+@media screen and (min-width: 768px) {
+	.container {
+		flex-direction: row;
 	}
 
-	.task-wrapper {
-		display: flex;
-		align-items: center;
+	.column-wrapper {
+		flex-direction: row;
+		gap: 2em;
 	}
 
-	.title {
-		font-family: 'Inter';
-		font-style: normal;
-		font-weight: 500;
-		font-size: 16px;
-		line-height: 19px;
-		letter-spacing: 0.018em;
-		color: #001747;
+	.kanban-board {
+		flex-direction: row;
 	}
 
-	.task-count {
-		font-family: 'Inter';
-		font-style: normal;
-		font-weight: 400;
-		font-size: 13px;
-		line-height: 16px;
-		text-align: center;
-		font-feature-settings: 'liga' off;
-		color: #2d70fd;
-		margin-left: auto;
+	.column {
+		flex: 1;
+		max-width: 300px;
 	}
 }
 
@@ -65,33 +59,7 @@
 	display: flex;
 	align-items: center;
 	gap: 12px;
-
-	h5 {
-		font-family: 'Inter';
-		font-style: normal;
-		font-weight: 300;
-		font-size: 13px;
-		line-height: 24px;
-		letter-spacing: -0.01em;
-		font-feature-settings: 'liga' off;
-		color: #405175;
-	}
-
-	h4 {
-		font-family: 'Inter';
-		font-style: normal;
-		font-weight: 500;
-		font-size: 13px;
-		line-height: 16px;
-		font-feature-settings: 'liga' off;
-		color: #001747;
-	}
-
-	.right-side {
-		display: flex;
-		margin-left: auto;
-		gap: 8px;
-	}
+	flex-wrap: wrap;
 }
 
 .column-seperator {

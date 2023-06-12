@@ -1,17 +1,19 @@
 @import './utilities.scss';
 
 .sidebar {
-	width: 185px;
+	width: 100%;
+	max-width: 185px;
 	background-color: #fff;
 	color: #fff;
 	padding: 0 5px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	box-sizing: border-box;
 
 	h2 {
-		font-size: 20px;
-		margin-bottom: 20px;
+		font-size: 1.25rem;
+		margin-bottom: 1.25rem;
 	}
 
 	.sidebar-list {
@@ -23,68 +25,128 @@
 			font-family: 'Inter', sans-serif;
 			font-style: normal;
 			font-weight: 400;
-			font-size: 13px;
-			line-height: 16px;
+			font-size: 0.8125rem;
+			line-height: 1rem;
 			letter-spacing: 0.02em;
 			font-feature-settings: 'liga' off;
 			color: #405175;
-			gap: 24px;
-			margin-top: 24px;
+			gap: 1.5rem;
+			margin-top: 1.5rem;
 			position: relative;
-			left: 10px;
+			left: 0.625rem;
 
 			&.active {
 				background: #2d70fd;
-				border-radius: 4px;
+				border-radius: 0.25rem;
 				color: #fff;
 				display: flex;
 				justify-content: flex-start;
-				height: 32px;
+				height: 2rem;
 				align-items: center;
 				position: relative;
 				left: 0;
-				padding-left: 12px;
-				margin-top: 16px;
-				margin-bottom: 16px;
+				padding-left: 0.75rem;
+				margin-top: 1rem;
+				margin-bottom: 1rem;
 
 				&::after {
 					content: '';
-					width: 5px;
-					height: 5px;
+					width: 0.3125rem;
+					height: 0.3125rem;
 					background: #ffffff;
-					border-radius: 1.5px;
+					border-radius: 0.09375rem;
 					position: relative;
 					display: block;
-					top: 1px;
+					top: 0.0625rem;
 					margin-left: auto;
-					right: 8px;
+					right: 0.5rem;
 				}
 			}
 
 			.user-image {
-				height: 24px;
+				height: 1.5rem;
 			}
 
 			.user-image-text {
-				top: -7px;
+				top: -0.4375rem;
 			}
 
 			.active-text {
 				top: 0;
-				left: -17px;
+				left: -1.0625rem;
 			}
 
 			span {
 				position: relative;
-				top: -3px;
-				left: 8px;
+				top: -0.1875rem;
+				left: 0.5rem;
 				white-space: nowrap;
 			}
 		}
 
 		.sidebar-company {
 			position: relative;
-			top: -7px;
+			top: -0.4375rem;
 		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.sidebar {
+		width: 100%;
+		padding: 1em;
+	}
+
+	.sidebar h2 {
+		font-size: 1rem;
+	}
+
+	.sidebar .sidebar-list li {
+		font-size: 0.8rem;
+		left: 0.3rem;
+	}
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 50px;
+	height: 100vh;
+	overflow: auto;
+}
+
+.sidebar {
+	width: 100%;
+	max-width: 185px;
+	background-color: #fff;
+	color: #fff;
+	padding: 0 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	box-sizing: border-box;
+	height: 100vh;
+}
+
+@media screen and (max-width: 600px) {
+	.container {
+		flex-direction: column;
+		height: auto;
+	}
+
+	.sidebar {
+		width: 100%;
+		height: auto;
+		padding: 1em;
+	}
+
+	.sidebar h2 {
+		font-size: 1rem;
+	}
+
+	.sidebar .sidebar-list li {
+		font-size: 0.8rem;
+		left: 0.3rem;
 	}
 }

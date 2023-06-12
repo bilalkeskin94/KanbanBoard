@@ -14,6 +14,15 @@
 	max-height: 110px;
 }
 
+.task-wrapper {
+	display: flex;
+	align-items: center;
+
+	.task-count {
+		margin-left: auto;
+	}
+}
+
 .info {
 	display: flex;
 	margin-top: 12px;
