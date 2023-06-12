@@ -22,10 +22,16 @@
 	background: #ffffff;
 	border: 1px solid rgba(0, 23, 71, 0.07);
 	border-radius: 8px;
-	min-height: 350px;
+	min-height: 150px;
+	max-width: 300px;
 
 	[data-rbd-droppable-context-id] {
 		min-height: 90vh;
+	}
+
+	.task-wrapper {
+		display: flex;
+		align-items: center;
 	}
 
 	.title {
@@ -36,6 +42,18 @@
 		line-height: 19px;
 		letter-spacing: 0.018em;
 		color: #001747;
+	}
+
+	.task-count {
+		font-family: 'Inter';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 13px;
+		line-height: 16px;
+		text-align: center;
+		font-feature-settings: 'liga' off;
+		color: #2d70fd;
+		margin-left: auto;
 	}
 }
 

@@ -1,4 +1,3 @@
-// Column.jsx
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Droppable } from 'react-beautiful-dnd';
@@ -7,11 +6,15 @@ import '../styles/Column.scss';
 
 const Column = ({ column }) => {
 	const { tasks } = useSelector((state) => state.kanban);
+	const taskCount = column.taskIds.length;
 
 	return (
 		<div className="column">
-			<h3 className="title">{column.title}</h3>
-      <hr className='board-seperator' />
+			<div className="task-wrapper">
+				<h3 className="title">{column.title}</h3>
+				<span className="task-count">({taskCount})</span>
+			</div>
+			<hr className="board-seperator" />
 			<Droppable droppableId={column.id}>
 				{(provided) => (
 					<div ref={provided.innerRef} {...provided.droppableProps}>
