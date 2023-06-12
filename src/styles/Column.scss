@@ -13,10 +13,11 @@
 	display: flex;
 	gap: 20px;
 	margin-top: 24px;
+	overflow: hidden;
 }
 
 .column {
-	flex: 1 1 0px;
+	flex: 1 1;
 	transition: box-shadow 0.3s ease;
 	padding: 24px;
 	background: #ffffff;
@@ -24,9 +25,11 @@
 	border-radius: 8px;
 	min-height: 150px;
 	max-width: 300px;
+	overflow-y: auto;
+	height: 810px;
 
 	[data-rbd-droppable-context-id] {
-		min-height: 90vh;
+		min-height: 70vh;
 	}
 
 	.task-wrapper {

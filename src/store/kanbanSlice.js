@@ -1,7 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-let lastTSKId = 0;
-let lastEPCId = 0;
 const initialState = {
 	columns: {
 		'column-1': {
@@ -30,19 +28,9 @@ const kanbanSlice = createSlice({
 				state.columns[columnId].taskIds.push(taskId);
 			},
 			prepare: ({ content, priority, columnId, type }) => {
-				let taskId;
-				if (type === 'TSK') {
-					lastTSKId++;
-					taskId = `TSK-${String(lastTSKId).padStart(2, '0')}`;
-				} else if (type === 'EPC') {
-					lastEPCId++;
-					taskId = `EPC-${String(lastEPCId).padStart(2, '0')}`;
-				} else {
-					throw new Error(`Invalid task type: ${type}`);
-				}
 				return {
 					payload: {
-						taskId,
+						taskId: type,
 						content,
 						priority,
 						type,
@@ -72,9 +60,17 @@ const kanbanSlice = createSlice({
 				endColumn.taskIds.splice(endIndex, 0, removed);
 			}
 		},
+		deleteTask: (state, action) => {
+			const { taskId, columnId } = action.payload;
+			state.columns[columnId].taskIds = state.columns[columnId].taskIds.filter(
+				(id) => id !== taskId
+			);
+			delete state.tasks[taskId];
+		},
 	},
 });
 
-export const { createTask, editTask, moveTask } = kanbanSlice.actions;
+export const { createTask, editTask, moveTask, deleteTask } =
+	kanbanSlice.actions;
 
 export default kanbanSlice.reducer;

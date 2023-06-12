@@ -18,11 +18,15 @@ const Column = ({ column }) => {
 			<Droppable droppableId={column.id}>
 				{(provided) => (
 					<div ref={provided.innerRef} {...provided.droppableProps}>
-						{column.taskIds.map((taskId, index) => (
-							<div className="task-list" key={taskId}>
-								<Task task={tasks[taskId]} index={index} />
-							</div>
-						))}
+						{column.taskIds.map((taskId, index) => {
+							const task = tasks[taskId];
+							return task ? (
+								<div className="task-list" key={taskId}>
+									<Task task={task} index={index} columnId={column.id} />
+								</div>
+							) : null;
+						})}
+
 						{provided.placeholder}
 					</div>
 				)}

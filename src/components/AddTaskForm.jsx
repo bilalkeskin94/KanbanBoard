@@ -1,4 +1,3 @@
-// AddTaskForm.jsx
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createTask } from '../store/kanbanSlice';
@@ -31,43 +30,48 @@ const AddTaskForm = () => {
 		}
 	};
 
-	return isAdding ? (
+	return (
 		<>
 			<button className="add-task-button" onClick={handleAdd}>
 				<img src={Plus} alt="plus icon" />
 			</button>
-			<div className="add-task-form">
-				<h2>Add Task</h2>
-				<input
-					type="text"
-					value={newContent}
-					onChange={(e) => setNewContent(e.target.value)}
-					autoFocus
-					placeholder="Task content"
-				/>
-				<select value={priority} onChange={(e) => setPriority(e.target.value)}>
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-				</select>
-				<select value={type} onChange={(e) => setType(e.target.value)}>
-					<option value="TSK">TSK</option>
-					<option value="EPC">EPC</option>
-				</select>
-				<select value={columnId} onChange={(e) => setColumnId(e.target.value)}>
-					<option value="column-1">Todo</option>
-					<option value="column-2">Done</option>
-				</select>
-				<div class="action-buttons">
-					<button onClick={handleClose}>Cancel</button>
-					<button onClick={handleSave}>Save</button>
+
+			{isAdding && (
+				<div className="add-task-form">
+					<h2>Add Task</h2>
+					<input
+						type="text"
+						value={newContent}
+						onChange={(e) => setNewContent(e.target.value)}
+						autoFocus
+						placeholder="Task content"
+					/>
+					<select
+						value={priority}
+						onChange={(e) => setPriority(e.target.value)}
+					>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select>
+					<select value={type} onChange={(e) => setType(e.target.value)}>
+						<option value="TSK">TSK</option>
+						<option value="EPC">EPC</option>
+					</select>
+					<select
+						value={columnId}
+						onChange={(e) => setColumnId(e.target.value)}
+					>
+						<option value="column-1">Todo</option>
+						<option value="column-2">Done</option>
+					</select>
+					<div className="action-buttons">
+						<button onClick={handleClose}>Cancel</button>
+						<button onClick={handleSave}>Save</button>
+					</div>
 				</div>
-			</div>
+			)}
 		</>
-	) : (
-		<button className="add-task-button" onClick={handleAdd}>
-			<img src={Plus} alt="plus icon" />
-		</button>
 	);
 };
 

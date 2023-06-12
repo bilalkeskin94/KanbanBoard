@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 import { useDispatch } from 'react-redux';
-import { editTask } from '../store/kanbanSlice';
+import { editTask, deleteTask } from '../store/kanbanSlice';
 import '../styles/Task.scss';
 import Chart1 from '../images/chart1.svg';
 import Chart2 from '../images/chart2.svg';
@@ -11,7 +11,7 @@ import EPC from '../images/epc.svg';
 import Number from '../images/number.svg';
 import User from '../images/ellipse-1154@2x.png';
 
-const Task = ({ task, index }) => {
+const Task = ({ task, index, columnId }) => {
 	const { id, content, priority } = task;
 	const dispatch = useDispatch();
 	const [isEditing, setIsEditing] = useState(false);
@@ -34,6 +34,10 @@ const Task = ({ task, index }) => {
 		setIsEditing(false);
 	};
 
+	const handleDelete = () => {
+		dispatch(deleteTask({ taskId: task.id, columnId })); // Include columnId here
+	};
+
 	return (
 		<Draggable draggableId={id} index={index}>
 			{(provided, snapshot) => (
@@ -43,9 +47,18 @@ const Task = ({ task, index }) => {
 					{...provided.dragHandleProps}
 					className={`task ${snapshot.isDragging ? 'is-dragging' : ''}`}
 				>
-					<button className="edit-button" onClick={handleEdit}>
-						Edit
-					</button>
+					<div
+						style={{
+							display: 'flex',
+						}}
+					>
+						<button className="edit-button" onClick={handleDelete}>
+							Delete
+						</button>
+						<button className="edit-button" onClick={handleEdit}>
+							Edit
+						</button>
+					</div>
 					<div className="content">
 						{isEditing ? (
 							<input
