@@ -3,8 +3,8 @@
 .board {
 	background-color: $very-light-grey;
 	width: 100%;
-	overflow: hidden;
 	padding: 24px;
+	height: fit-content;
 }
 
 .kanban-board {
