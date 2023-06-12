@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Provider } from 'react-redux';
-import store from './store/store';
+import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor } from './store/store';
 import KanbanBoard from './components/KanbanBoard';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
@@ -15,14 +16,16 @@ const App = () => {
 
 	return (
 		<Provider store={store}>
-			<div className="app">
-				<Navbar onSearch={handleSearch} />
-				<div className="main">
-					<Sidebar />
+			<PersistGate loading={null} persistor={persistor}>
+				<div className="app">
+					<Navbar onSearch={handleSearch} />
+					<div className="main">
+						<Sidebar />
 
-					<KanbanBoard searchTerm={searchTerm} />
+						<KanbanBoard searchTerm={searchTerm} />
+					</div>
 				</div>
-			</div>
+			</PersistGate>
 		</Provider>
 	);
 };
